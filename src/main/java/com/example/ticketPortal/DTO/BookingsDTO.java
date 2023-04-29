@@ -12,7 +12,7 @@ public class BookingsDTO {
 
     private Double price;
 
-    private String TrainName;
+    private String trainName;
 
     private String time;
 
@@ -73,11 +73,11 @@ public class BookingsDTO {
     }
 
     public String getTrainName() {
-        return TrainName;
+        return trainName;
     }
 
     public void setTrainName(String trainName) {
-        TrainName = trainName;
+        this.trainName = trainName;
     }
 
     public String getTime() {

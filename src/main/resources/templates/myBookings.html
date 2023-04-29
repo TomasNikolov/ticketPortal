@@ -109,7 +109,7 @@
                     <td th:text="${train.fromDestination}"></td>
                     <td th:text="${train.toDestination}"></td>
                     <td th:text="${train.time}"></td>
-                    <td th:text="${train.TrainName}"></td>
+                    <td th:text="${train.trainName}"></td>
                     <td th:text="${train.price}"></td>
                     <td th:text="${train.tripStatus}"></td>
                     <td><a th:href="@{/myBooking/cancel/{id}(id=${train.id})}" th:disabled="${train.tripStatus eq Canceled}"

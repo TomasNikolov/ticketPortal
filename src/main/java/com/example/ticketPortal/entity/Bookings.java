@@ -22,7 +22,7 @@ public class Bookings {
 
     private String fromDestination;
 
-    private String TrainName;
+    private String trainName;
 
     private int userId;
 
@@ -73,11 +73,11 @@ public class Bookings {
     }
 
     public String getTrainName() {
-        return TrainName;
+        return trainName;
     }
 
     public void setTrainName(String trainName) {
-        TrainName = trainName;
+        this.trainName = trainName;
     }
 
     public int getUserId() {
