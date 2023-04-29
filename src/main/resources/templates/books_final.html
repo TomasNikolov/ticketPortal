@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Train Reservation System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<style>
+    .navbar {
+        background-color: #d9edf7;
+    }
+
+    input, label {
+        display: block;
+    }
+</style>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <h2>Booking Page</h2>
+
+            <div class="container">
+                <div><h4> Hi, Welcome <span th:text="*{userDetails}"></span></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<br><br><br><br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div th:if="${param.success}">
+            <div class="alert alert-info">Your Bookings Done ,go to My Bookings section to check you booking , by going
+                on Dashboard.
+            </div>
+        </div>
+
+        <h1>Booking</h1>
+
+        <form th:action="@{/dashboard/booking}" method="post"
+              th:object="${record}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group" style="width: 21%;">
+                            <label class="control-label" for="from">
+                                From </label>
+                            <input id="from" class="form-control"
+                                   th:field="*{fromDestination}" required readonly="readonly"
+                                   autofocus="autofocus"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group" style="width: 21%;">
+                            <label class="control-label" for="to"> To
+                            </label> <input id="to" class="form-control"
+                                            th:field="*{toDestination}" required readonly="readonly"
+                                            autofocus="autofocus"
+                        />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="filterDate">Date
+                            </label><input type="date" th:field="*{filterDate}" id="filterDate" required
+                                           readonly="readonly" autofocus="autofocus"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" style="width: 21%;">
+                            <label class="control-label" for="price"> Price
+                            </label> <input id="price" class="form-control"
+                                            th:field="*{price}" required readonly="readonly" autofocus="autofocus"
+                        />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group" style="width: 21%;">
+                            <label class="control-label" for="trainName"> Train Name
+                            </label> <input id="trainName" class="form-control"
+                                            th:field="*{trainName}" required readonly="readonly" autofocus="autofocus"
+                        />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group" style="width: 21%;">
+                            <label class="control-label" for="time"> Departure Time
+                            </label> <input id="time" class="form-control"
+                                            th:field="*{time}" required readonly="readonly" autofocus="autofocus"
+                        />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="margin-top:25px;">
+                                Pay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                        <span>Go To Dashboard <a href="/" th:href="@{/dashboard}">DashBoard</a></span>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
